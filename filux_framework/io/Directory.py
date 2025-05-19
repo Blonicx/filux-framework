@@ -24,10 +24,6 @@ class Directory:
     
     ## Directory Property's ##
     @property
-    def childs(self):
-        return Directory(self.path)
-
-    @property
     def path(self):
         return self.path
 
