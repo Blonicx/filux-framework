@@ -1,23 +1,28 @@
-from vaultio.io.File import File
+"""Path utilities for file operations."""
+
+from filux_framework.io.File import File
 from urllib.request import urlopen
 
 class Path:
+    """A class for path utilities."""
+
     def __init__(self):
         pass
-    
-    ## Basic Operations ##
-    def compare_files(self, PathOne, PathTwo):
-        File_1 = File(PathOne)
-        File_2 = File(PathTwo)
-        
-        if File_1.get_content == File_2.get_content() and File_1.get_file_hash() == File_2.get_file_hash() and File_1.get_file_size() == File_2.get_file_size():
-            return True
-        else:
-            return False
 
-    def download_file(self, destPath, URL):
+    def compare_files(self, path_one, path_two):
+        """Compare two files by content, hash, and size."""
+        file_1 = File(path_one)
+        file_2 = File(path_two)
+        return (
+            file_1.get_content() == file_2.get_content() and
+            file_1.get_file_hash() == file_2.get_file_hash() and
+            file_1.get_file_size() == file_2.get_file_size()
+        )
+
+    def download_file(self, dest_path, url):
+        """Download a file from a URL to a destination path."""
         try:
-            with urlopen(URL) as response, open(destPath, 'wb') as out_file:
+            with urlopen(url) as response, open(dest_path, 'wb') as out_file:
                 out_file.write(response.read())
         except Exception as e:
             print(f"Error downloading file: {e}")
