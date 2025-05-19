@@ -1,11 +1,11 @@
-# Vaultio
+# filux-framework
 
-[![GitHub stars](https://img.shields.io/github/stars/Blonicx/Vaultio?style=social)](https://github.com/Blonicx/Vaultio/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Blonicx/Vaultio?style=social)](https://github.com/Blonicx/Vaultio/network)
-[![GitHub issues](https://img.shields.io/github/issues/Blonicx/Vaultio)](https://github.com/Blonicx/Vaultio/issues)
-[![License](https://img.shields.io/github/license/Blonicx/Vaultio)](./LICENSE.txt)
+[![GitHub stars](https://img.shields.io/github/stars/Blonicx/filux-framework?style=social)](https://github.com/Blonicx/filux-framework/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Blonicx/filux-framework?style=social)](https://github.com/Blonicx/filux-framework/network)
+[![GitHub issues](https://img.shields.io/github/issues/Blonicx/filux-framework)](https://github.com/Blonicx/filux-framework/issues)
+[![License](https://img.shields.io/github/license/Blonicx/filux-framework)](./LICENSE.txt)
 
-Vaultio is a Python file framework for easy file and directory manipulation, metadata extraction, and more.
+filux-framework is a Python file framework for easy file and directory manipulation, metadata extraction, and more.
 
 ## Features
 
@@ -18,21 +18,21 @@ Vaultio is a Python file framework for easy file and directory manipulation, met
 ## Installation
 
 ```sh
-pip install git+https://github.com/Blonicx/Vaultio.git
+pip install git+https://github.com/Blonicx/filux-framework.git
 ```
 
 Or clone and install locally:
 
 ```sh
-git clone https://github.com/Blonicx/Vaultio.git
-cd Vaultio
+git clone https://github.com/Blonicx/filux-framework.git
+cd filux-framework
 pip install .
 ```
 
 ## Project Structure
 
 ```
-vaultio/
+filux-framework/
     __init__.py
     io/
         Directory.py

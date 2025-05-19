@@ -1,5 +1,5 @@
 [project]
-name = "Vaultio"
+name = "filux-framework"
 version = "0.1.0"
 description = "A Python File Framework"
 authors = [{ name="Blonicx"}]
