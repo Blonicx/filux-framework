@@ -18,7 +18,7 @@ filux-framework is a Python file framework for easy file and directory manipulat
 ## Installation
 
 ```sh
-pip install git+https://github.com/Blonicx/filux-framework.git
+pip install filux-framework
 ```
 
 Or clone and install locally:
@@ -27,17 +27,6 @@ Or clone and install locally:
 git clone https://github.com/Blonicx/filux-framework.git
 cd filux-framework
 pip install .
-```
-
-## Project Structure
-
-```
-filux-framework/
-    __init__.py
-    io/
-        Directory.py
-        File.py
-        Path.py
 ```
 
 ## License
