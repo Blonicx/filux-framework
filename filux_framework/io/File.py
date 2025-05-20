@@ -1,4 +1,4 @@
-"""File operations and metadata extraction."""
+"""Basic File loading with operations and data."""
 
 import hashlib
 import os
@@ -62,10 +62,6 @@ class File:
                 print(f"Failed to get file metadata: {e}")
                 return None
 
-    def get_file_size(self):
-        """Get the file size in bytes."""
-        return os.path.getsize(self._path)
-
     def get_file_hash(self, algorithm='sha256'):
         """Compute the hash of a file using the specified algorithm."""
         hash_func = hashlib.new(algorithm)
@@ -98,6 +94,11 @@ class File:
         os.remove(self._path)
 
     @property
+    def file_size(self):
+        """Get the file size in bytes."""
+        return os.path.getsize(self._path)
+
+    @property
     def extension(self):
         """Return the file extension."""
         return self._extension
@@ -116,21 +117,3 @@ class File:
     def parent(self):
         """Return the parent directory."""
         return self._dirname
-
-    def write_content(self, content):
-        """Override the content of the file."""
-        with open(self._path, "w", encoding="utf-8") as file:
-            try:
-                file.write(content)
-            except Exception as e:
-                print(e)
-
-    def get_content(self):
-        """Read the file and get its content."""
-        with open(self._path, encoding="utf-8") as file:
-            try:
-                content = file.read()
-                return content
-            except Exception as e:
-                print(e)
-                return None
