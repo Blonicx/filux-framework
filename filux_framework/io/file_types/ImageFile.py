@@ -1,11 +1,11 @@
 """TextFile class for handling text files."""
-
-from filux_framework.io.File import File
-from PIL import Image, ExifTags
-
 import os
 
+from PIL import Image, ExifTags
+from filux_framework.io.File import File
+
 class ImageFile(File):
+    """A class for image file operations and data."""
     def __init__(self, path):
         super().__init__(path)
         self._image = None

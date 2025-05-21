@@ -3,7 +3,7 @@
 from filux_framework.io.File import File
 
 class TextFile(File):
-    """A class for text file operations."""
+    """A class for text file operations and data"""
 
     def __init__(self, path):
         super().__init__(path)
@@ -25,6 +25,3 @@ class TextFile(File):
         except Exception as e:
             print(e)
             return None
-
-if __name__ == "__main__":
-    print(TextFile(__file__).path)

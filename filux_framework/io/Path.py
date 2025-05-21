@@ -1,7 +1,9 @@
 """Path utilities for file operations."""
 
-from filux_framework.io.File import File
+import os
+
 from urllib.request import urlopen
+from filux_framework.io.File import File
 
 class Path:
     """A class for path utilities."""
@@ -14,9 +16,8 @@ class Path:
         file_1 = File(path_one)
         file_2 = File(path_two)
         return (
-            file_1.get_content() == file_2.get_content() and
             file_1.get_file_hash() == file_2.get_file_hash() and
-            file_1.get_file_size() == file_2.get_file_size()
+            file_1.file_size == file_2.file_size
         )
 
     def download_file(self, dest_path, url):
@@ -26,3 +27,7 @@ class Path:
                 out_file.write(response.read())
         except Exception as e:
             print(f"Error downloading file: {e}")
+            
+    def is_dir(self, file_path):
+        """Checks if a File is a Folder"""
+        return os.path.isdir(file_path)
