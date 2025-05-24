@@ -3,7 +3,6 @@ import os
 class Cache:
     def __init__(self, cache_dir=".remote_cache"):
         self._cache_dir = cache_dir
-        
         if not os.path.exists(self._cache_dir):
             os.makedirs(self._cache_dir)
 
@@ -18,7 +17,6 @@ class Cache:
     def delete_cached_file(self, filename):
         """Delete a Singel file from the cache"""
         _path = os.path.join(self._cache_dir, filename)
-        
         if os.path.exists(_path):
             os.remove(_path)
 
