@@ -7,7 +7,7 @@ from filux_framework.io.File import File
 class DuplicateFinder:
     """Class to find duplicate files based on size and hash."""
 
-    def __init__(self, path):
+    def __init__(self, path:str):
         """
         Initialize DuplicateFinder.
 
@@ -42,7 +42,7 @@ class DuplicateFinder:
                 try:
                     h = File(f).get_file_hash()
                     hashes[h].append(f)
-                except Exception:  # Consider replacing with a more specific exception if possible
+                except Exception:  #Todo: Consider replacing with a more specific exception if possible
                     continue
             for dup_list in hashes.values():
                 if len(dup_list) > 1:

@@ -5,10 +5,10 @@ from filux_framework.io.File import File
 class TextFile(File):
     """A class for text file operations and data"""
 
-    def __init__(self, path):
+    def __init__(self, path:str):
         super().__init__(path)
 
-    def write_content(self, content):
+    def write_content(self, content:str):
         """Override the content of the file."""
         try:
             with open(self._path, "w", encoding="utf-8") as file:

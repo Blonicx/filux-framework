@@ -6,7 +6,7 @@ from filux_framework.io.File import File
 
 class ImageFile(File):
     """A class for image file operations and data."""
-    def __init__(self, path):
+    def __init__(self, path:str):
         super().__init__(path)
         self._image = None
         try:
@@ -42,9 +42,9 @@ class ImageFile(File):
     @property
     def exif(self):
         """Return raw EXIF data as a dictionary (if present)."""
-        if self._image and hasattr(self._image, '_getexif'):
+        if self._image and hasattr(self._image, 'getexif'):
             try:
-                exif_raw = self._image._getexif()
+                exif_raw = self._image.getexif()
                 if exif_raw:
                     return {
                         ExifTags.TAGS.get(k, k): v for k, v in exif_raw.items()

@@ -6,7 +6,9 @@ import platform
 import stat
 import zipfile
 import datetime
-import win32com.client
+import win32com
+
+from win32com.client import gencache
 
 DEFAULT_METADATA = [
     'Name', 'Size', 'Item type', 'Date modified', 'Date created', 'Date accessed', 'Attributes',
@@ -20,7 +22,7 @@ DEFAULT_METADATA = [
 class File:
     """A class for file operations and metadata."""
 
-    def __init__(self, path):
+    def __init__(self, path:str):
         """Initialize File object."""
         self._path = path
         self._dirname, self._filename = os.path.split(self._path)
@@ -32,7 +34,7 @@ class File:
             metadata = DEFAULT_METADATA
         if win32com and platform.system() == "Windows":
             try:
-                sh = win32com.client.gencache.EnsureDispatch('Shell.Application', 0)
+                sh = gencache.EnsureDispatch('Shell.Application', 0)
                 ns = sh.NameSpace(self._dirname)
                 item = ns.ParseName(str(self._filename))
                 file_metadata = {}
@@ -62,7 +64,7 @@ class File:
                 print(f"Failed to get file metadata: {e}")
                 return None
 
-    def get_file_hash(self, algorithm='sha256'):
+    def get_file_hash(self, algorithm:str='sha256'):
         """Compute the hash of a file using the specified algorithm."""
         hash_func = hashlib.new(algorithm)
         try:
@@ -81,11 +83,11 @@ class File:
         with zipfile.ZipFile(self._filename + '.zip', 'w', compress) as target:
             target.write(self._path, arcname=self._filename)
 
-    def rename(self, name):
+    def rename(self, name:str):
         """Rename the file."""
         os.rename(self._path, os.path.join(self._dirname, name + self._extension))
 
-    def move(self, dest_path):
+    def move(self, dest_path:str):
         """Move the file to a new destination."""
         os.rename(self._path, dest_path)
 

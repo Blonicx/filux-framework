@@ -5,7 +5,7 @@ import os
 class Directory:
     """A class for directory operations."""
 
-    def __init__(self, path):
+    def __init__(self, path:str):
         """Initialize Directory object."""
         self._path = path
         self._dirname, self._filename = os.path.split(self._path)
