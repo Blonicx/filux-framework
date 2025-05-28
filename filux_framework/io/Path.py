@@ -23,6 +23,9 @@ class Path:
     def walk(self, path:str, topdown:bool):
         return os.walk(path, topdown)
 
+    def listdir(self, path:str):
+        return os.listdir(path)
+
     def is_dir(self, file_path:str):
         """Checks if a File is a Folder"""
         return os.path.isdir(file_path)
