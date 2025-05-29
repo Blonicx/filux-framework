@@ -1,7 +1,7 @@
 import os
 
 from urllib.request import urlopen
-from filux_framework.system.Cache import Cache
+from filux_framework.sys.Cache import Cache
 
 class Download(Cache):
     def __init__(self, url:str, cache_dir:str=".remote_cache"):
@@ -11,6 +11,9 @@ class Download(Cache):
     def downlaod(self, filename:str, download_dir=None):
         if download_dir is None:
             download_dir=self._cache_dir
+        else:
+            os.makedirs(download_dir, exist_ok=True)
+
 
         file = urlopen(self._url)
         with open(os.path.join(download_dir, filename),'wb') as output_file:

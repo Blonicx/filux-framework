@@ -2,7 +2,7 @@
 import os
 
 from PIL import Image, ExifTags
-from filux_framework.io.File import File
+from filux_framework.sys.io.File import File
 
 class ImageFile(File):
     """A class for image file operations and data."""

@@ -1,6 +1,6 @@
 """TextFile class for handling text files."""
 
-from filux_framework.io.File import File
+from filux_framework.sys.io.File import File
 
 class TextFile(File):
     """A class for text file operations and data"""

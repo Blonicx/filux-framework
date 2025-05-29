@@ -3,7 +3,7 @@
 import os
 
 from urllib.request import urlopen
-from filux_framework.io.File import File
+from filux_framework.sys.io.File import File
 
 class Path:
     """A class for path utilities."""
@@ -21,9 +21,11 @@ class Path:
         )
 
     def walk(self, path:str, topdown:bool):
+        """List content of the Directory with subfolders"""        
         return os.walk(path, topdown)
 
     def listdir(self, path:str):
+        """List content of the Directory"""
         return os.listdir(path)
 
     def is_dir(self, file_path:str):

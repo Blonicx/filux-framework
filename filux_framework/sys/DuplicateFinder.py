@@ -2,7 +2,7 @@
 
 import os
 from collections import defaultdict
-from filux_framework.io.File import File
+from filux_framework.sys.io.File import File
 
 class DuplicateFinder:
     """Class to find duplicate files based on size and hash."""
